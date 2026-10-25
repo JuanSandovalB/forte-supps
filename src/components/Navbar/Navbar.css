@@ -1,0 +1,90 @@
+.navbar {
+  width: min(var(--max-width), calc(100% - 40px));
+  margin: auto;
+  padding: 28px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  z-index: 10;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar__icon {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 22px;
+  font-weight: 900;
+  font-style: italic;
+
+  background: linear-gradient(
+    135deg,
+    var(--color-pink),
+    var(--color-blue)
+  );
+
+  transform: skew(-8deg);
+  border-radius: var(--radius-sm);
+
+  box-shadow: 0 0 25px rgba(0, 132, 255, 0.35);
+}
+
+.navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+}
+
+.navbar__brand-text strong {
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.navbar__brand-text span {
+  font-size: 10px;
+  letter-spacing: 6px;
+  color: var(--color-blue);
+  margin-top: 7px;
+}
+
+.navbar__contact {
+  padding: 12px 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s;
+}
+
+.navbar__contact:hover {
+  background: var(--color-white);
+  color: #000;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding-top: 20px;
+  }
+
+  .navbar__contact {
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+}

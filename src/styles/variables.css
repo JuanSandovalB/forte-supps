@@ -1,0 +1,21 @@
+:root {
+  --color-bg: #030303;
+  --color-bg-secondary: #0a0a0a;
+
+  --color-white: #ffffff;
+  --color-text: #999999;
+
+  --color-pink: #ff007a;
+  --color-blue: #00a8ff;
+  --color-green: #00e878;
+
+  --border-color: rgba(255, 255, 255, 0.08);
+
+  --font-main: "Montserrat", sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 26px;
+
+  --max-width: 1200px;
+}

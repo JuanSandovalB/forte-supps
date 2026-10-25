@@ -1,0 +1,29 @@
+.categories {
+  width: min(var(--max-width), calc(100% - 40px));
+  margin: 0 auto 50px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.categories__item {
+  padding: 9px 13px;
+
+  border: 1px solid var(--border-color);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border-radius: var(--radius-sm);
+
+  font-size: 11px;
+
+  color: #888;
+}
+
+@media (max-width: 900px) {
+  .categories {
+    justify-content: center;
+  }
+}
