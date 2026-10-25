@@ -1,6 +1,6 @@
 import "./Home.css";
 
-import Navbar from "../../components/navbar/navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import Hero from "../../components/Hero/Hero";
 import Categories from "../../components/Categories/Categories";
 import Footer from "../../components/Footer/Footer";
