@@ -22,9 +22,10 @@
 .footer__social {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
-.footer__instagram {
+.footer__social-link {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -49,18 +50,15 @@
     box-shadow 0.25s ease;
 }
 
-.footer__instagram-icon {
+.footer__social-icon {
   width: 24px;
   height: 24px;
-
   flex-shrink: 0;
 }
 
 .footer__instagram:hover {
   color: var(--color-white);
-
   border-color: var(--color-pink);
-
   background: rgba(255, 0, 122, 0.07);
 
   transform: translateY(-2px);
@@ -70,7 +68,19 @@
     0 0 24px rgba(0, 168, 255, 0.12);
 }
 
-.footer__instagram:focus-visible {
+.footer__tiktok:hover {
+  color: var(--color-white);
+  border-color: var(--color-blue);
+  background: rgba(0, 168, 255, 0.07);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 18px rgba(0, 168, 255, 0.25),
+    0 0 24px rgba(255, 0, 122, 0.12);
+}
+
+.footer__social-link:focus-visible {
   outline: 2px solid var(--color-blue);
   outline-offset: 4px;
 }
@@ -78,11 +88,13 @@
 @media (max-width: 600px) {
   .footer {
     flex-direction: column;
-
     justify-content: center;
-
     gap: 18px;
-
     text-align: center;
+  }
+
+  .footer__social {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

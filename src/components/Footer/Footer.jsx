@@ -12,13 +12,13 @@ function Footer() {
           href="https://www.instagram.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="footer__instagram"
+          className="footer__social-link footer__instagram"
           aria-label="Instagram de Forte Supps"
         >
           <svg
             viewBox="0 0 24 24"
             aria-hidden="true"
-            className="footer__instagram-icon"
+            className="footer__social-icon"
           >
             <path
               fill="currentColor"
@@ -27,6 +27,27 @@ function Footer() {
           </svg>
 
           <span>Instagram</span>
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@forte.supps?_r=1&_t=ZS-9Aq8BujODzz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer__social-link footer__tiktok"
+          aria-label="TikTok de Forte Supps"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            className="footer__social-icon"
+          >
+            <path
+              fill="currentColor"
+              d="M16.6 5.82a4.1 4.1 0 0 0 2.4.77V9.1a6.65 6.65 0 0 1-2.4-.46v5.22a5.15 5.15 0 1 1-4.45-5.1v2.6a2.58 2.58 0 1 0 1.85 2.48V3h2.6c.05.97.46 1.98 1.18 2.72.25.25.53.46.82.63Z"
+            />
+          </svg>
+
+          <span>TikTok</span>
         </a>
       </div>
     </footer>
