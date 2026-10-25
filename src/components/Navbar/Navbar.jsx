@@ -13,7 +13,7 @@ function Navbar() {
       </div>
 
       <a
-        href="https://wa.me/"
+        href="https://wa.me/3134030510"
         target="_blank"
         rel="noopener noreferrer"
         className="navbar__contact"
