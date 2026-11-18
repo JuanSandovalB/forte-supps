@@ -1,29 +1,570 @@
 .categories {
-  width: min(var(--max-width), calc(100% - 40px));
-  margin: 0 auto 50px;
+  position: relative;
+  padding: 84px 64px;
 
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 10px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 5, 117, 0.05), transparent 28%),
+    radial-gradient(circle at 88% 70%, rgba(5, 158, 255, 0.06), transparent 30%),
+    #050306;
 }
 
-.categories__item {
-  padding: 9px 13px;
+.categories__container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
 
-  border: 1px solid var(--border-color);
+.categories__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 
-  background: rgba(255, 255, 255, 0.025);
+  gap: 32px;
 
-  border-radius: var(--radius-sm);
+  margin-bottom: 36px;
+}
+
+.categories__eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+
+  color: #059eff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.categories__title {
+  margin: 0;
+
+  color: #fafaff;
+
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 900;
+
+  line-height: 1.04;
+  letter-spacing: -1.4px;
+
+  text-transform: uppercase;
+}
+
+.categories__description {
+  max-width: 650px;
+  margin: 14px 0 0;
+
+  color: #9ea3b8;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.categories__all-link {
+  flex-shrink: 0;
+
+  color: #fafaff;
 
   font-size: 11px;
+  font-weight: 800;
 
-  color: #888;
+  letter-spacing: 0.5px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-@media (max-width: 900px) {
+.categories__all-link:hover {
+  color: #0dd9ff;
+  transform: translateX(4px);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.categories__grid {
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  gap: 16px;
+}
+
+/* =========================
+   CARD BASE
+========================= */
+
+.category-card {
+  position: relative;
+
+  min-height: 240px;
+
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  background: #090a0e;
+
+  border: 1px solid #20222c;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-card--large {
+  grid-column: span 3;
+}
+
+.category-card--small {
+  grid-column: span 2;
+}
+
+/* =========================
+   GLOW
+========================= */
+
+.category-card__glow {
+  position: absolute;
+
+  width: 230px;
+  height: 230px;
+
+  top: -90px;
+  right: -70px;
+
+  border-radius: 50%;
+
+  filter: blur(12px);
+
+  opacity: 0.7;
+
+  pointer-events: none;
+}
+
+.category-card--pink .category-card__glow {
+  background: radial-gradient(
+    circle,
+    rgba(255, 5, 117, 0.45),
+    transparent 65%
+  );
+}
+
+.category-card--blue .category-card__glow {
+  background: radial-gradient(
+    circle,
+    rgba(5, 158, 255, 0.45),
+    transparent 65%
+  );
+}
+
+.category-card--purple .category-card__glow {
+  background: radial-gradient(
+    circle,
+    rgba(184, 64, 255, 0.42),
+    transparent 65%
+  );
+}
+
+.category-card--cyan .category-card__glow {
+  background: radial-gradient(
+    circle,
+    rgba(13, 217, 255, 0.42),
+    transparent 65%
+  );
+}
+
+.category-card--rose .category-card__glow {
+  background: radial-gradient(
+    circle,
+    rgba(255, 71, 148, 0.42),
+    transparent 65%
+  );
+}
+
+/* =========================
+   HOVER COLORES
+========================= */
+
+.category-card--pink:hover {
+  border-color: rgba(255, 5, 117, 0.45);
+  box-shadow: 0 20px 48px rgba(255, 5, 117, 0.09);
+}
+
+.category-card--blue:hover {
+  border-color: rgba(5, 158, 255, 0.45);
+  box-shadow: 0 20px 48px rgba(5, 158, 255, 0.09);
+}
+
+.category-card--purple:hover {
+  border-color: rgba(184, 64, 255, 0.42);
+}
+
+.category-card--cyan:hover {
+  border-color: rgba(13, 217, 255, 0.42);
+}
+
+.category-card--rose:hover {
+  border-color: rgba(255, 71, 148, 0.42);
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.category-card__eyebrow {
+  position: relative;
+  z-index: 2;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.category-card--pink .category-card__eyebrow {
+  color: #ff0575;
+}
+
+.category-card--blue .category-card__eyebrow {
+  color: #059eff;
+}
+
+.category-card--purple .category-card__eyebrow {
+  color: #b840ff;
+}
+
+.category-card--cyan .category-card__eyebrow {
+  color: #0dd9ff;
+}
+
+.category-card--rose .category-card__eyebrow {
+  color: #ff4794;
+}
+
+.category-card__bottom {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 16px;
+}
+
+.category-card__name {
+  margin: 0;
+
+  color: #fafaff;
+
+  font-size: 25px;
+  font-weight: 900;
+
+  line-height: 1.05;
+}
+
+.category-card__arrow {
+  color: #fafaff;
+
+  font-size: 24px;
+  font-weight: 500;
+
+  transition: transform 0.25s ease;
+}
+
+.category-card:hover .category-card__arrow {
+  transform: translate(3px, -3px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
   .categories {
-    justify-content: center;
+    padding: 72px 40px;
+  }
+
+  .categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-card--large,
+  .category-card--small {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 680px) {
+  .categories {
+    padding: 62px 22px;
+  }
+
+  .categories__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .categories__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card {
+    min-height: 190px;
+  }
+
+  .category-card__name {
+    font-size: 22px;
+  }
+}
+
+/* ==========================================
+   FORTE SUPPS - CATEGORIES RESPONSIVE
+========================================== */
+
+/* BASE */
+
+.categories,
+.categories__container,
+.categories__grid {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.categories__grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.category-card {
+  box-sizing: border-box;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.category-card__name,
+.category-card__eyebrow {
+  overflow-wrap: anywhere;
+}
+
+.category-card:focus-visible {
+  outline: 2px solid #059eff;
+  outline-offset: 4px;
+}
+
+/* TABLETAS GRANDES */
+
+@media (max-width: 1100px) {
+  .categories {
+    padding: 76px 36px;
+  }
+
+  .categories__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .category-card--large,
+  .category-card--small {
+    grid-column: span 1;
+  }
+
+  .category-card {
+    min-height: 205px;
+  }
+}
+
+/* TABLETAS PEQUEÑAS */
+
+@media (max-width: 760px) {
+  .categories {
+    padding: 64px 24px;
+  }
+
+  .categories__header {
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .category-card {
+    min-height: 175px;
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .category-card__name {
+    font-size: 22px;
+  }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+  .categories {
+    padding: 60px 18px;
+  }
+
+  .categories__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 26px;
+  }
+
+  .categories__title {
+    font-size: clamp(29px, 8vw, 40px);
+    letter-spacing: -1px;
+  }
+
+  .categories__description {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .categories__all-link {
+    display: inline-flex;
+    padding: 9px 0;
+  }
+
+  .categories__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .category-card--large,
+  .category-card--small {
+    grid-column: auto;
+  }
+
+  .category-card {
+    min-height: 155px;
+    padding: 20px;
+    border-radius: 17px;
+  }
+
+  .category-card__name {
+    font-size: 21px;
+    line-height: 1.15;
+  }
+
+  .category-card__eyebrow {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .category-card__arrow {
+    font-size: 21px;
+    flex-shrink: 0;
+  }
+
+  .category-card__glow {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* ACCESIBILIDAD */
+
+@media (hover: none) {
+  .category-card:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-card,
+  .category-card__arrow {
+    transition: none;
+  }
+}
+/* ==========================================
+   FORTE SUPPS - IMÁGENES DE CATEGORÍAS
+========================================== */
+
+.category-card__image {
+  position: absolute;
+
+  top: 36px;
+  left: 5%;
+  right: 5%;
+  bottom: 34px;
+
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.category-card__image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  transition: transform 0.35s ease;
+}
+
+.category-card:hover .category-card__image img {
+  transform: scale(1.05);
+}
+
+/* Los textos siempre quedan por encima */
+
+.category-card__eyebrow,
+.category-card__bottom {
+  position: relative;
+  z-index: 3;
+}
+
+/* Ajuste para tarjetas pequeñas */
+
+.category-card--small .category-card__image {
+  top: 38px;
+  bottom: 36px;
+  left: 3%;
+  right: 3%;
+}
+
+/* Ajuste responsive */
+
+@media (max-width: 600px) {
+  .category-card__image,
+  .category-card--small .category-card__image {
+    top: 28px;
+    bottom: 30px;
+    left: 5%;
+    right: 5%;
+  }
+
+  .category-card__image img {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-card__image img {
+    transition: none;
+  }
+
+  .category-card:hover .category-card__image img {
+    transform: none;
   }
 }

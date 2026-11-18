@@ -1,0 +1,553 @@
+
+/* ==========================================
+   FORTE SUPPS - FORTE AI
+========================================== */
+
+.finder.forte-ai {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.85fr);
+  align-items: start;
+  gap: 32px;
+  background: #030305;
+}
+
+/* CONTENEDORES */
+
+.forte-ai .finder__quiz,
+.forte-ai .finder__preview {
+  min-width: 0;
+  padding: 34px;
+  border: 1px solid rgba(5, 158, 255, 0.25);
+  border-radius: 26px;
+  background: #0b0c12;
+}
+
+.forte-ai .finder__quiz {
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(255, 5, 117, 0.06),
+      transparent 45%
+    ),
+    #0b0c12;
+}
+
+.forte-ai .finder__preview {
+  background:
+    linear-gradient(180deg, #100a17, #061017);
+}
+
+/* CABECERA */
+
+.forte-ai .finder__pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  border: 1px solid rgba(5, 158, 255, 0.45);
+  border-radius: 999px;
+  background: rgba(5, 158, 255, 0.09);
+  color: #00cfff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.forte-ai .finder__quiz > h2 {
+  margin: 22px 0 14px;
+  color: #fff;
+  font-size: clamp(27px, 3vw, 39px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.16;
+}
+
+.forte-ai .finder__quiz > p {
+  margin: 0 0 25px;
+  color: #9da4b8;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* CONVERSACIÓN */
+
+.forte-ai__conversation {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 150px;
+  max-height: 370px;
+  overflow-y: auto;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: #07080d;
+}
+
+.forte-ai__message {
+  max-width: 92%;
+  padding: 16px 18px;
+  border-radius: 16px;
+}
+
+.forte-ai__message > span {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.forte-ai__message p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.forte-ai__message--assistant {
+  align-self: flex-start;
+  color: #d9deea;
+  background: #161720;
+  border: 1px solid rgba(5, 158, 255, 0.14);
+}
+
+.forte-ai__message--assistant > span {
+  color: #00cfff;
+}
+
+.forte-ai__message--user {
+  align-self: flex-end;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 5, 117, 0.18),
+    rgba(98, 43, 188, 0.18)
+  );
+  border: 1px solid rgba(255, 5, 117, 0.3);
+}
+
+.forte-ai__message--user > span {
+  color: #ff4fa4;
+}
+
+/* PREGUNTAS SUGERIDAS */
+
+.forte-ai__examples {
+  margin-top: 22px;
+}
+
+.forte-ai__examples > span {
+  display: block;
+  margin-bottom: 13px;
+  color: #8e96aa;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+}
+
+.forte-ai__suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.forte-ai__suggestions button {
+  padding: 10px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 999px;
+  color: #c6cbd9;
+  background: #11121a;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.forte-ai__suggestions button:hover {
+  color: #fff;
+  border-color: rgba(255, 5, 117, 0.6);
+  background: rgba(255, 5, 117, 0.1);
+}
+
+/* FORMULARIO */
+
+.forte-ai__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.forte-ai__form > label {
+  color: #f2f3f8;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.7px;
+}
+
+.forte-ai__form textarea {
+  width: 100%;
+  min-height: 118px;
+  padding: 16px;
+  resize: vertical;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 14px;
+  outline: none;
+  background: #090a11;
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.6;
+  transition: border-color 0.2s ease;
+}
+
+.forte-ai__form textarea::placeholder {
+  color: #747b8e;
+}
+
+.forte-ai__form textarea:focus {
+  border-color: #ff0575;
+  box-shadow: 0 0 0 3px rgba(255, 5, 117, 0.08);
+}
+
+.forte-ai__form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.forte-ai__form-footer small {
+  color: #82899c;
+  font-size: 11px;
+}
+
+.forte-ai__form-footer button {
+  min-height: 47px;
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(
+    100deg,
+    #ff0575,
+    #b712bd,
+    #059eff
+  );
+  color: #fff;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.forte-ai__form-footer button:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+.forte-ai__form-footer button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.forte-ai__error {
+  margin: 4px 0 0;
+  padding: 12px;
+  border: 1px solid rgba(255, 110, 140, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 110, 140, 0.06);
+  color: #ff8da7;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* PANEL DERECHO */
+
+.forte-ai .finder__preview > span {
+  color: #00cfff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.forte-ai .finder__preview h3 {
+  margin: 24px 0 16px;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 900;
+}
+
+.forte-ai .finder__preview > p {
+  color: #a0a7bb;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.forte-ai .finder__preview ul {
+  display: grid;
+  gap: 11px;
+  margin: 26px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.forte-ai .finder__preview li {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 13px;
+  background: rgba(0, 0, 0, 0.32);
+  color: #fff;
+  font-size: 13px;
+}
+
+.forte-ai .finder__preview li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background: #00cfff;
+}
+
+.forte-ai .finder__note {
+  margin-top: 26px;
+  padding: 16px;
+  border: 1px solid rgba(46, 242, 133, 0.25);
+  border-radius: 14px;
+  background: rgba(46, 242, 133, 0.06);
+  color: #58e9a4;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* TABLET */
+
+@media (max-width: 950px) {
+  .finder.forte-ai {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+  .finder.forte-ai {
+    padding: 55px 16px;
+  }
+
+  .forte-ai .finder__quiz,
+  .forte-ai .finder__preview {
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+
+  .forte-ai .finder__quiz > h2 {
+    font-size: 29px;
+  }
+
+  .forte-ai__conversation {
+    padding: 12px;
+    max-height: 330px;
+  }
+
+  .forte-ai__message {
+    max-width: 100%;
+    padding: 14px;
+  }
+
+  .forte-ai__form-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .forte-ai__form-footer button {
+    width: 100%;
+  }
+
+  .forte-ai .finder__preview h3 {
+    font-size: 24px;
+  }
+}
+
+/* ==========================================
+   FORTE SUPPS - FORTE FINDER RESPONSIVE
+========================================== */
+
+/* Evitar desbordamientos internos */
+
+.finder.forte-ai,
+.forte-ai .finder__quiz,
+.forte-ai .finder__preview,
+.forte-ai__conversation,
+.forte-ai__form,
+.forte-ai__suggestions {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.forte-ai *,
+.forte-ai *::before,
+.forte-ai *::after {
+  box-sizing: border-box;
+}
+
+.forte-ai__form textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.forte-ai__message {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.forte-ai__message p {
+  overflow-wrap: anywhere;
+}
+
+/* TABLETAS */
+
+@media (max-width: 1100px) {
+  .finder.forte-ai {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .forte-ai .finder__quiz,
+  .forte-ai .finder__preview {
+    width: 100%;
+  }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+  .finder.forte-ai {
+    padding: 55px 18px;
+    gap: 18px;
+  }
+
+  .forte-ai .finder__quiz,
+  .forte-ai .finder__preview {
+    padding: 22px 16px;
+    border-radius: 18px;
+  }
+
+  .forte-ai .finder__quiz > h2 {
+    font-size: clamp(25px, 7vw, 31px);
+    line-height: 1.16;
+    letter-spacing: -0.7px;
+    overflow-wrap: anywhere;
+  }
+
+  .forte-ai .finder__quiz > p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .forte-ai__conversation {
+    min-height: 130px;
+    max-height: 300px;
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .forte-ai__message {
+    max-width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+  }
+
+  .forte-ai__message p {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .forte-ai__suggestions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .forte-ai__suggestions button {
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 13px;
+    border-radius: 12px;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .forte-ai__form {
+    margin-top: 22px;
+  }
+
+  .forte-ai__form textarea {
+    min-height: 112px;
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .forte-ai__form-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .forte-ai__form-footer button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .forte-ai .finder__preview h3 {
+    font-size: 23px;
+  }
+
+  .forte-ai .finder__preview li {
+    padding: 13px;
+    font-size: 12px;
+  }
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 380px) {
+  .finder.forte-ai {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .forte-ai .finder__quiz,
+  .forte-ai .finder__preview {
+    padding: 18px 14px;
+  }
+
+  .forte-ai .finder__quiz > h2 {
+    font-size: 25px;
+  }
+}
+
+/* ACCESIBILIDAD */
+
+.forte-ai__suggestions button:focus-visible,
+.forte-ai__form button:focus-visible,
+.forte-ai__form textarea:focus-visible {
+  outline: 2px solid #059eff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forte-ai__suggestions button,
+  .forte-ai__form button,
+  .forte-ai__form textarea {
+    transition: none;
+  }
+}

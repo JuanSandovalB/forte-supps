@@ -1,0 +1,1059 @@
+.products-page {
+  min-height: 100vh;
+  background: #050306;
+  color: #fafaff;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.products-hero {
+  position: relative;
+  padding: 80px 64px 92px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 18% 30%,
+      rgba(255, 5, 117, 0.11),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 88% 60%,
+      rgba(5, 158, 255, 0.1),
+      transparent 30%
+    ),
+    #050306;
+}
+
+.products-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 52px 52px;
+
+  pointer-events: none;
+}
+
+.products-hero__inner {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1240px;
+
+  margin: 0 auto;
+}
+
+.products-hero__back {
+  display: inline-block;
+
+  margin-bottom: 42px;
+
+  color: #8d91a3;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.products-hero__back:hover {
+  color: #0dd9ff;
+}
+
+.products-hero__eyebrow {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #ff0575;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 1.8px;
+}
+
+.products-hero h1 {
+  max-width: 800px;
+
+  margin: 0;
+
+  font-size: clamp(56px, 7vw, 92px);
+
+  line-height: 0.95;
+
+  font-weight: 900;
+
+  letter-spacing: -3px;
+}
+
+.products-hero h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      #ff0575,
+      #22cfff,
+      #059eff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.products-hero p {
+  max-width: 620px;
+
+  margin: 24px 0 0;
+
+  color: #9ea3b8;
+
+  font-size: 16px;
+
+  line-height: 1.75;
+}
+
+/* =========================
+   SHARED
+========================= */
+
+.products-categories,
+.products-best {
+  padding: 76px 64px;
+}
+
+.products-section__header {
+  width: 100%;
+  max-width: 1240px;
+
+  margin: 0 auto 36px;
+}
+
+.products-section__header span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #0dd9ff;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 1.6px;
+}
+
+.products-section__header h2 {
+  margin: 0;
+
+  color: #fafaff;
+
+  font-size: clamp(34px, 4vw, 48px);
+
+  font-weight: 900;
+
+  letter-spacing: -1.4px;
+}
+
+.products-section__header p {
+  max-width: 620px;
+
+  margin: 14px 0 0;
+
+  color: #9ea3b8;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.products-categories {
+  background: #040405;
+}
+
+.products-categories__grid {
+  width: 100%;
+  max-width: 1240px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, 1fr);
+
+  gap: 16px;
+}
+
+.products-category {
+  position: relative;
+
+  min-height: 220px;
+
+  padding: 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  background: #090a0e;
+
+  border: 1px solid #20222c;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.products-category:nth-child(1),
+.products-category:nth-child(2) {
+  grid-column: span 3;
+}
+
+.products-category:nth-child(3),
+.products-category:nth-child(4),
+.products-category:nth-child(5) {
+  grid-column: span 3;
+}
+
+.products-category:hover {
+  transform: translateY(-5px);
+}
+
+.products-category__glow {
+  position: absolute;
+
+  width: 230px;
+  height: 230px;
+
+  right: -70px;
+  top: -90px;
+
+  border-radius: 50%;
+
+  filter: blur(12px);
+
+  opacity: 0.7;
+}
+
+.products-category--pink
+.products-category__glow {
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 5, 117, 0.5),
+      transparent 65%
+    );
+}
+
+.products-category--blue
+.products-category__glow {
+  background:
+    radial-gradient(
+      circle,
+      rgba(5, 158, 255, 0.5),
+      transparent 65%
+    );
+}
+
+.products-category--purple
+.products-category__glow {
+  background:
+    radial-gradient(
+      circle,
+      rgba(184, 64, 255, 0.45),
+      transparent 65%
+    );
+}
+
+.products-category--cyan
+.products-category__glow {
+  background:
+    radial-gradient(
+      circle,
+      rgba(13, 217, 255, 0.45),
+      transparent 65%
+    );
+}
+
+.products-category--rose
+.products-category__glow {
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 71, 148, 0.45),
+      transparent 65%
+    );
+}
+
+.products-category__subtitle {
+  position: relative;
+  z-index: 2;
+
+  color: #a8acbd;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 1.4px;
+}
+
+.products-category__bottom {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 18px;
+}
+
+.products-category__bottom h3 {
+  margin: 0;
+
+  color: #fafaff;
+
+  font-size: 25px;
+
+  font-weight: 900;
+}
+
+.products-category__bottom span {
+  color: #fafaff;
+
+  font-size: 24px;
+}
+
+/* =========================
+   BEST SELLERS
+========================= */
+
+.products-best {
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(255, 5, 117, 0.05),
+      transparent 30%
+    ),
+    #050306;
+}
+
+.products-best__grid {
+  width: 100%;
+  max-width: 1240px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+.products-best-card {
+  position: relative;
+
+  padding: 20px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  border: 1px solid #252733;
+
+  background: #09090d;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.products-best-card:hover {
+  transform: translateY(-6px);
+}
+
+.products-best-card__badge {
+  position: absolute;
+
+  top: 34px;
+  left: 34px;
+
+  z-index: 3;
+
+  padding: 7px 11px;
+
+  border-radius: 999px;
+
+  color: #fff;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 0.7px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff0575,
+      #bd0bb7,
+      #059eff
+    );
+}
+
+.products-best-card__image {
+  height: 300px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.055),
+      transparent 42%
+    ),
+    #0c0d11;
+}
+
+.products-best-card__image img {
+  width: 88%;
+  height: 88%;
+
+  object-fit: contain;
+
+  transition: transform 0.4s ease;
+}
+
+.products-best-card:hover
+.products-best-card__image img {
+  transform: scale(1.04);
+}
+
+.products-best-card__content {
+  padding-top: 18px;
+}
+
+.products-best-card__content > span {
+  color: #858a9f;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+}
+
+.products-best-card__content h3 {
+  margin: 8px 0 18px;
+
+  color: #fafaff;
+
+  font-size: 19px;
+
+  line-height: 1.25;
+}
+
+.products-best-card__link {
+  color: #0dd9ff;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   FINDER CTA
+========================= */
+
+.products-finder {
+  padding: 70px 64px 100px;
+
+  background: #040405;
+}
+
+.products-finder__content {
+  width: 100%;
+  max-width: 1240px;
+
+  margin: 0 auto;
+
+  padding: 52px;
+
+  border-radius: 28px;
+
+  border:
+    1px solid
+    rgba(5, 158, 255, 0.2);
+
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(255, 5, 117, 0.12),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(5, 158, 255, 0.14),
+      transparent 34%
+    ),
+    #09090d;
+}
+
+.products-finder__content span {
+  color: #ff0575;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.products-finder__content h2 {
+  margin: 12px 0 0;
+
+  color: #fafaff;
+
+  font-size: clamp(34px, 4vw, 48px);
+
+  font-weight: 900;
+}
+
+.products-finder__content p {
+  max-width: 620px;
+
+  margin: 14px 0 26px;
+
+  color: #9ea3b8;
+
+  font-size: 14px;
+}
+
+.products-finder__content a {
+  display: inline-flex;
+
+  min-height: 48px;
+
+  padding: 0 22px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 13px;
+
+  color: #fff;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff0575,
+      #c20daf,
+      #059eff
+    );
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .products-hero,
+  .products-categories,
+  .products-best,
+  .products-finder {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .products-categories__grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .products-category:nth-child(n) {
+    grid-column: span 1;
+  }
+
+  .products-best__grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .products-hero,
+  .products-categories,
+  .products-best,
+  .products-finder {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .products-hero {
+    padding-top: 54px;
+    padding-bottom: 64px;
+  }
+
+  .products-categories__grid,
+  .products-best__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-finder__content {
+    padding: 34px 24px;
+  }
+}
+.products-best-card__price {
+  display: block;
+  margin-top: 10px;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 900;
+
+  letter-spacing: -0.4px;
+}
+
+/* ==========================================
+   FORTE SUPPS - PRODUCTS RESPONSIVE
+========================================== */
+
+/* BASE */
+
+.products-page,
+.products-page *,
+.products-page *::before,
+.products-page *::after {
+  box-sizing: border-box;
+}
+
+.products-page,
+.products-hero__inner,
+.products-categories__grid,
+.products-best__grid,
+.products-category,
+.products-best-card,
+.products-finder__content {
+  min-width: 0;
+}
+
+.products-category,
+.products-best-card {
+  text-decoration: none;
+}
+
+.products-category__bottom h3,
+.products-best-card__content h3 {
+  overflow-wrap: anywhere;
+}
+
+.products-best-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.products-best-card__image {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.products-best-card__image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.products-best-card__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.products-best-card__link {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+/* COMPUTADORES MEDIANOS Y TABLETAS */
+
+@media (max-width: 1100px) {
+  .products-hero,
+  .products-categories,
+  .products-best,
+  .products-finder {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+
+  .products-categories__grid,
+  .products-best__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .products-category:nth-child(n) {
+    grid-column: auto;
+  }
+
+  .products-category {
+    min-height: 190px;
+  }
+
+  .products-best-card__image {
+    height: 280px;
+  }
+}
+
+/* TABLETAS PEQUEÑAS */
+
+@media (max-width: 760px) {
+  .products-hero,
+  .products-categories,
+  .products-best,
+  .products-finder {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .products-hero h1 {
+    font-size: clamp(40px, 7vw, 62px);
+    line-height: 1.05;
+    letter-spacing: -1.8px;
+  }
+
+  .products-category__bottom h3 {
+    font-size: 21px;
+  }
+
+  .products-best__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .products-finder__content {
+    padding: 38px 30px;
+  }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+  .products-hero {
+    padding: 42px 18px 55px;
+  }
+
+  .products-hero__back {
+    margin-bottom: 28px;
+  }
+
+  .products-hero h1 {
+    font-size: clamp(35px, 9vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -1.2px;
+    overflow-wrap: anywhere;
+  }
+
+  .products-hero p {
+    margin-top: 18px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .products-categories,
+  .products-best {
+    padding: 58px 18px;
+  }
+
+  .products-section__header {
+    margin-bottom: 25px;
+  }
+
+  .products-section__header h2 {
+    font-size: clamp(29px, 8vw, 38px);
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+
+  .products-section__header p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* CATEGORÍAS */
+
+  .products-categories__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .products-category:nth-child(n) {
+    grid-column: auto;
+  }
+
+  .products-category {
+    min-height: 155px;
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .products-category__subtitle {
+    font-size: 9px;
+    line-height: 1.5;
+    letter-spacing: 0.9px;
+  }
+
+  .products-category__bottom {
+    gap: 10px;
+  }
+
+  .products-category__bottom h3 {
+    font-size: 21px;
+    line-height: 1.2;
+  }
+
+  .products-category__bottom span {
+    flex-shrink: 0;
+    font-size: 22px;
+  }
+
+  .products-category__glow {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* MÁS VENDIDOS */
+
+  .products-best__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .products-best-card {
+    padding: 16px;
+    border-radius: 19px;
+  }
+
+  .products-best-card__badge {
+    top: 27px;
+    left: 27px;
+    font-size: 8px;
+  }
+
+  .products-best-card__image {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 15px;
+  }
+
+  .products-best-card__image img {
+    width: 86%;
+    height: 86%;
+    object-fit: contain;
+  }
+
+  .products-best-card__content {
+    padding-top: 18px;
+  }
+
+  .products-best-card__content h3 {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .products-best-card__price {
+    font-size: 19px;
+  }
+
+  .products-best-card__link {
+    font-size: 11px;
+    padding-top: 18px;
+  }
+
+  /* ENCUENTRA TU FORTE */
+
+  .products-finder {
+    padding: 55px 18px 70px;
+  }
+
+  .products-finder__content {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
+  .products-finder__content h2 {
+    font-size: clamp(28px, 8vw, 38px);
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+
+  .products-finder__content p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .products-finder__content a {
+    width: 100%;
+    min-height: 46px;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 380px) {
+  .products-hero,
+  .products-categories,
+  .products-best,
+  .products-finder {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .products-category {
+    padding: 17px;
+  }
+
+  .products-category__bottom h3 {
+    font-size: 19px;
+  }
+}
+
+/* ACCESIBILIDAD */
+
+.products-page a:focus-visible {
+  outline: 2px solid #059eff;
+  outline-offset: 4px;
+}
+
+@media (hover: none) {
+  .products-category:hover,
+  .products-best-card:hover {
+    transform: none;
+  }
+
+  .products-best-card:hover
+  .products-best-card__image img {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .products-category,
+  .products-best-card,
+  .products-best-card__image img {
+    transition: none;
+  }
+}
+/* ==========================================
+   IMÁGENES DE CATEGORÍAS - FORTE SUPPS
+========================================== */
+
+.products-category__image {
+  position: absolute;
+
+  top: 40px;
+  left: 8%;
+  right: 8%;
+  bottom: 38px;
+
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.products-category__image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35));
+
+  transition: transform 0.35s ease;
+}
+
+.products-category:hover .products-category__image img {
+  transform: scale(1.04);
+}
+
+/* Mantener los textos encima de la imagen */
+
+.products-category__subtitle,
+.products-category__bottom {
+  position: relative;
+  z-index: 3;
+}
+
+/* Ajuste en celulares */
+
+@media (max-width: 600px) {
+  .products-category__image {
+    top: 28px;
+    left: 8%;
+    right: 8%;
+    bottom: 32px;
+  }
+
+  .products-category__image img {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .products-category__image img {
+    transition: none;
+  }
+
+  .products-category:hover .products-category__image img {
+    transform: none;
+  }
+}
