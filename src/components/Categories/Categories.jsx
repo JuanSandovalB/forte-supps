@@ -89,12 +89,7 @@ function Categories() {
             </p>
           </div>
 
-          <Link
-            to="/productos"
-            className="categories__all-link"
-          >
-            VER TODO →
-          </Link>
+        
         </div>
 
         <div className="categories__grid">

@@ -51,12 +51,7 @@ function FeaturedProducts() {
             </p>
           </div>
 
-          <Link
-            to="/productos"
-            className="featured-products__catalog-link"
-          >
-            VER TODO EL CATÁLOGO →
-          </Link>
+          
         </div>
 
         <div className="featured-products__grid">
