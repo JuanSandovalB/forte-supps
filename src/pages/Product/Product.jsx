@@ -3,7 +3,7 @@ import "./Product.css";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import Navbar from "../../components/navbar/navbar";
+import Navbar from "../../components/Navbar/Navbar";
 
 import { useStack } from "../../context/StackContext";
 import { usePrices } from "../../context/PriceContext";

@@ -1,7 +1,7 @@
 import "./Stack.css";
 
 import { Link } from "react-router-dom";
-import Navbar from "../../components/navbar/navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import { useStack } from "../../context/StackContext";
 import { useAvailability } from "../../context/AvailabilityContext";
 import { usePrices } from "../../context/PriceContext";
